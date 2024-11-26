@@ -1,20 +1,35 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import { DestinationProvider } from './context/DestinationContext';
+import DestinationList from './components/DestinationList';
+import EditDestination from './components/EditDestination';
+import DestinationDetails from './components/DestinationDetails';
+
+const Stack = createStackNavigator();
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <DestinationProvider>
+      <NavigationContainer>
+        <Stack.Navigator initialRouteName="DestinationList">
+          <Stack.Screen
+            name="DestinationList"
+            component={DestinationList}
+            options={{ title: 'Destinos' }}
+          />
+          <Stack.Screen
+            name="DestinationDetails"
+            component={DestinationDetails}
+            options={{ title: 'Detalles del Destino' }}
+          />
+          <Stack.Screen
+            name="EditDestination"
+            component={EditDestination}
+            options={{ title: 'Editar Destino' }}
+          />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </DestinationProvider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});

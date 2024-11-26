@@ -1,0 +1,58 @@
+[
+    {
+      "id": "1",
+      "name": "Mount Everest",
+      "description": "Climb the highest mountain in the world.",
+      "difficulty": "hard",
+      "favourite": false
+    },
+    {
+      "id": "2",
+      "name": "Great Barrier Reef",
+      "description": "Dive into the world's largest coral reef system.",
+      "difficulty": "medium",
+      "favourite": false
+    },
+    {
+      "id": "3",
+      "name": "Sahara Desert",
+      "description": "Experience the vastness of the largest hot desert.",
+      "difficulty": "medium",
+      "favourite": false
+    },
+    {
+      "id": "4",
+      "name": "Amazon Rainforest",
+      "description": "Explore the biodiversity of the largest rainforest.",
+      "difficulty": "medium",
+      "favourite": false
+    },
+    {
+      "id": "5",
+      "name": "Antarctica Expedition",
+      "description": "Venture into the coldest continent on Earth.",
+      "difficulty": "hard",
+      "favourite": false
+    },
+    {
+      "id": "6",
+      "name": "Machu Picchu",
+      "description": "Visit the ancient Incan city in the Andes Mountains.",
+      "difficulty": "easy",
+      "favourite": false
+    },
+    {
+      "id": "7",
+      "name": "Grand Canyon",
+      "description": "Hike through the iconic canyon in Arizona.",
+      "difficulty": "medium",
+      "favourite": false
+    },
+    {
+      "id": "8",
+      "name": "Great Wall of China",
+      "description": "Walk along the historic wall stretching across China.",
+      "difficulty": "easy",
+      "favourite": false
+    }
+  ]
