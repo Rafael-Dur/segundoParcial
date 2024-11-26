@@ -24,7 +24,7 @@ export const fetchDestinationById = async (id) => {
 
 export const addDestination = async (name, description, difficulty) => {
   try {
-    const response = await fetch(`http://${IP}:8000/rduran`, {
+    const response = await fetch(`http://${IP}:8000/rduran/`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

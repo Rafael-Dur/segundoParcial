@@ -5,6 +5,7 @@ import { DestinationProvider } from './context/DestinationContext';
 import DestinationList from './components/DestinationList';
 import EditDestination from './components/EditDestination';
 import DestinationDetails from './components/DestinationDetails';
+import AddDestination from './components/AddDestination';
 
 const Stack = createStackNavigator();
 
@@ -27,6 +28,11 @@ export default function App() {
             name="EditDestination"
             component={EditDestination}
             options={{ title: 'Editar Destino' }}
+          />
+          <Stack.Screen
+            name="AddDestination"
+            component={AddDestination}
+            options={{ title: 'Agregar Nuevo Destino' }}
           />
         </Stack.Navigator>
       </NavigationContainer>

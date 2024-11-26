@@ -54,8 +54,11 @@ const DestinationList = ({ navigation }) => {
   };
 
   const sortedDestinations = [...destinations].sort((a, b) => {
+    const nameA = typeof a.name === 'string' ? a.name : '';
+    const nameB = typeof b.name === 'string' ? b.name : '';
+
     if (a.isFavorite === b.isFavorite) {
-      return a.name.localeCompare(b.name);
+      return nameA.localeCompare(nameB);
     }
     return a.isFavorite ? -1 : 1;
   });
@@ -66,14 +69,18 @@ const DestinationList = ({ navigation }) => {
         data={sortedDestinations}
         keyExtractor={(item) => item.id.toString()}
         renderItem={({ item }) => {
-          const difficultyTag = getDifficultyTag(item.difficulty);
+          const difficultyTag = getDifficultyTag(item.difficulty || '');
+          console.log('Destino procesado:', item);
+
           return (
             <View style={styles.destinationContainer}>
               <TouchableOpacity
                 style={styles.destination}
                 onPress={() => navigation.navigate('DestinationDetails', { destination: item })}
               >
-                <Text style={styles.destinationName}>{item.name}</Text>
+                <Text style={styles.destinationName}>
+                  {typeof item.name === 'string' ? item.name : 'Nombre no disponible'}
+                </Text>
               </TouchableOpacity>
               <View style={[styles.difficultyTag, { backgroundColor: difficultyTag.color }]}>
                 <Text style={styles.difficultyText}>{difficultyTag.text}</Text>
@@ -92,6 +99,7 @@ const DestinationList = ({ navigation }) => {
           );
         }}
       />
+
       <TouchableOpacity
         style={styles.addButton}
         onPress={() => navigation.navigate('AddDestination')}
